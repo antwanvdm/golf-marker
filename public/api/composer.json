@@ -1,0 +1,17 @@
+{
+    "name": "golf-marker/api",
+    "description": "API for the Golf Marker app",
+    "type": "project",
+    "authors": [
+        {
+            "name": "antwan",
+            "email": "antwanvdm@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "System\\": "System"
+        }
+    }
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Golf Marker</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="images/favicons/manifest.json">
+    <link rel="mask-icon" href="images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="images/favicons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/images/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css" rel="stylesheet"/>
+    <style>
+        body {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body class="justify-center">
+<section class="px-4 sm:px-6 lg:px-4 xl:px-6 pt-4 pb-4 sm:pb-6 lg:pb-4 xl:pb-6 space-y-4" id="find-your-marker-overlay">
+    <header class="flex items-center justify-between">
+        <div>
+            <img src="images/favicons/safari-pinned-tab.svg" alt="Find your marker logo" class="inline-block w-5 pt"/>
+            <h1 class="inline-block text-lg leading-3 font-bold text-black">Vind een <span class="text-gray-500 italic">Golf Marker</span></h1>
+        </div>
+        <!--        <nav>-->
+        <!--            <div class="flex flex-row justify-between">-->
+        <!--                <p id="hamburgerbtn" class="md:hidden bg-purple-800">-->
+        <!--                    menu-->
+        <!--                </p>-->
+        <!--            </div>-->
+        <!--            <ul>-->
+        <!--                <li><a href="index.html">Home</a></li>-->
+        <!--                <li><a href="about.html">Over Golf Marker</a></li>-->
+        <!--                <li><a href="terms-conditions.html">Algemene voorwaarden</a></li>-->
+        <!--            </ul>-->
+        <!--        </nav>-->
+    </header>
+    <p id="paragraph-text" class="text-base text mt-3">Ben je op zoek naar een marker voor een spontaan potje golf? Vul hier je zoekcriteria in en vind een match waarmee je snel de baan op kan!<br/><br/>Vul je naam/email (zodat jij en je marker kunnen connecten), gewenste starttijd, handicap en maximale kilometer range waarin je beschikbaar bent om te spelen in.</p>
+    <form id="find-your-marker-form" class="relative">
+        <input class="focus:border-light-blue-500 focus:ring-1 focus:ring-light-blue-500 focus:outline-none w-47 text-sm text-black placeholder-gray-500 border border-gray-200 rounded-md py-2 pl-3" id="name" type="text" aria-label="Naam" placeholder="Naam" required/>
+        <input class="focus:border-light-blue-500 focus:ring-1 focus:ring-light-blue-500 focus:outline-none w-47 text-sm text-black placeholder-gray-500 border border-gray-200 rounded-md py-2 pl-3" id="email" type="email" aria-label="E-mail" placeholder="E-mail" required/>
+        <input class="focus:border-light-blue-500 focus:ring-1 focus:ring-light-blue-500 focus:outline-none w-47 text-sm text-black placeholder-gray-500 border border-gray-200 rounded-md py-2 pl-3" id="dateTime" type="datetime-local" aria-label="Beschikbare datum en start tijd" required/>
+        <input class="focus:border-light-blue-500 focus:ring-1 focus:ring-light-blue-500 focus:outline-none w-47 text-sm text-black placeholder-gray-500 border border-gray-200 rounded-md py-2 pl-3" id="handicap" type="number" aria-label="Jouw handicap" min="1" max="54" placeholder="Jouw handicap" required/>
+        <input class="focus:border-light-blue-500 focus:ring-1 focus:ring-light-blue-500 focus:outline-none w-47 text-sm text-black placeholder-gray-500 border border-gray-200 rounded-md py-2 pl-3" id="kmRange" type="number" aria-label="Maximale range in kilometers" min="5" placeholder="Maximale range in KM" required/>
+        <div>
+            <input class="inline-block ml-1" type="checkbox" aria-label="Ik ga akkoord met de algemene voorwaarden" id="approve-terms" required/>
+            <label class="inline-block ml-1.5 my-2 mb-2" for="approve-terms">Ik ga akkoord met de <a class="underline text-gray-500" href="terms-conditions.html" target="_blank">algemene voorwaarden</a></label>
+        </div>
+        <input class="focus:border-light-blue-500 focus:ring-1 focus:ring-light-blue-500 focus:outline-none w-11/12 text-sm text-black placeholder-gray-500 border border-gray-200 rounded-md py-2 pl-3 ml-1.5" type="submit" value="Vind mijn marker!"/>
+    </form>
+</section>
+<section class="w-full h-80 relative">
+    <div id="maps" class="w-full h-80"></div>
+    <div class="loader-overlay absolute top-0 left-0 right-0 bottom-0 w-full z-50 overflow-hidden bg-white opacity-75 flex flex-col items-center justify-center">
+        <div class="loader ease-linear rounded-full border-4 border-t-4 border-gray-200 h-12 w-12 mb-4"></div>
+    </div>
+</section>
+<script type="text/javascript" src="dist/main.js"></script>
+</body>
+</html>
