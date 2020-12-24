@@ -77,4 +77,20 @@ class Player
             ':lat' => $player->lat
         ]);
     }
+
+    /**
+     * Used for cleanup cron task
+     *
+     * @return bool
+     * @throws \Exception
+     */
+    public static function removeOldPlayers(): bool
+    {
+        $db = Database::getInstance();
+        $deleteTimestamp = time() - 3600;
+        $statement = $db->prepare("DELETE FROM players WHERE date_time < :time");
+        return $statement->execute([
+            ':time' => $deleteTimestamp
+        ]);
+    }
 }
