@@ -1,6 +1,10 @@
 {
   "name": "Golf Marker",
   "short_name": "Golf Marker",
+  "display": "fullscreen",
+  "orientation": "portrait",
+  "Scope": "/",
+  "start_url": "/",
   "icons": [
     {
       "src": "images/favicons/android-chrome-192x192.png",
@@ -16,5 +20,5 @@
   "theme_color": "#ffffff",
   "prefer_related_applications": false,
   "background_color": "#ffffff",
-  "display": "standalone"
+  "splash_pages": null
 }
