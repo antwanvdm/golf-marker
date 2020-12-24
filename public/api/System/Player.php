@@ -6,7 +6,7 @@
  */
 class Player
 {
-    public int $id;
+    public ?int $id = null;
     public string $name;
     public string $email;
     public int $date_time;
@@ -41,14 +41,16 @@ class Player
                                 as distance FROM `players`
                             ) AS p
                             WHERE distance <= :km_range
-                            AND p.date_time BETWEEN :time_start AND :time_end");
+                            AND p.date_time BETWEEN :time_start AND :time_end
+                            AND p.email != :email");
 
         $statement->execute([
             ":lng" => $player->lng,
             ":lat" => $player->lat,
             ":km_range" => $player->km_range,
             ":time_start" => $player->date_time - 3600,
-            ":time_end" => $player->date_time + 3600
+            ":time_end" => $player->date_time + 3600,
+            ":email" => $player->email
         ]);
 
         return $statement->fetchAll(\PDO::FETCH_CLASS, "System\\Player");
