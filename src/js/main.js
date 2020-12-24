@@ -62,8 +62,9 @@ function formSubmitHandler(e)
                     document.querySelector("#" + key).classList.add("error");
                 }
             }
+        } else {
+            setResult(data.results)
         }
-        setResult(data.results)
     });
 }
 
