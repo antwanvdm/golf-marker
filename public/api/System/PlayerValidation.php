@@ -47,7 +47,7 @@ class PlayerValidation
             $this->errors['handicap'] = true;
         }
 
-        if ($this->player->handicap < 5) {
+        if ($this->player->km_range < 5) {
             $this->errors['kmRange'] = true;
         }
     }
