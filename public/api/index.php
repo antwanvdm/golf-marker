@@ -4,6 +4,7 @@ require_once "vendor/autoload.php";
 
 //Important for external requests
 header('Access-Control-Allow-Origin: http://localhost:9000');
+header('Access-Control-Allow-Origin: https://golf-marker.antwan.eu');
 header('Access-Control-Allow-Headers: Content-Type');
 
 //Import for readability
