@@ -1,8 +1,9 @@
 import mapboxgl from 'mapbox-gl/dist/mapbox-gl.js';
+import settings from './application.config';
 
 const MapBoxInteraction = function (loadedCallback) {
     this.map = false;
-    this.accessToken = 'pk.eyJ1IjoiYW50d2FuaHJvIiwiYSI6ImNraXlybXRnbjQ0eWIycXFqOGswNmE5aWoifQ.tLWW7-Xiz6FS5ZxPtf62VQ';
+    this.accessToken = settings.mapBoxAccessToken;
     this.currentLocation = [0, 0];
 
     this.init = () => {

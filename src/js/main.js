@@ -1,5 +1,6 @@
 import '../css/main.css';
 import MapBoxInteraction from './MapBoxInteraction';
+import settings from './application.config';
 
 window.addEventListener("load", init);
 let mapBoxInteraction;
@@ -37,7 +38,7 @@ function formSubmitHandler(e)
         document.querySelector("#approve-terms+label").classList.remove("error");
     }
 
-    fetch('http://localhost:9999', {
+    fetch(settings.apiURL, {
         method: 'POST',
         mode: 'cors',
         cache: 'no-cache',
