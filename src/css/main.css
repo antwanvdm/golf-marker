@@ -2,13 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+.text-custom {
+    font-size: 0.9rem;
+}
+
 body.loaded {
     opacity: 1;
     transition: opacity 0.5s ease-in;
 }
 
-.w-47 {
-    width: 47%;
+.w-48 {
+    width: 48%;
 }
 
 .error {

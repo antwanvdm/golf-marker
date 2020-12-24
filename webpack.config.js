@@ -3,6 +3,7 @@ const path = require('path');
 module.exports = {
     mode: 'development',
     entry: './src/js/main.js',
+    devtool: 'hidden-source-map',
     output: {
         path: path.resolve(__dirname, 'public/dist'),
         filename: 'main.js',
