@@ -30,6 +30,7 @@ const SENDGRID_API_KEY = "";
 
 ```
 - Server running for the PHP API side (double check this, else API will fail);
-- Run `npm install` & `composer install` (in the public/api folder)
-- Run `npm run build:dev` (or watch to watch) to get a compiled JS file
-- Run `npm run serve` to get localhost up & running
+- Make sure you have a MYSQL Database (need in settings.php) and import the `_resources/sql` file;
+- Run `npm install` & `composer install` (in the public/api folder);
+- Run `npm run build:dev` (or watch to watch) to get a compiled JS file;
+- Run `npm run serve` to get localhost up & running.
