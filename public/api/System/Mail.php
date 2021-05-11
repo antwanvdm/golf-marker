@@ -42,7 +42,7 @@ class Mail
      */
     public function send($emailAddress): bool
     {
-        $this->mail->setFrom("antwanvdm@gmail.com", "Golf Marker");
+        $this->mail->setFrom(EMAIL_FROM, "Golf Marker");
         $this->mail->setSubject("Nieuwe marker gevonden!");
         $this->mail->addTo($emailAddress);
         $this->mail->addContent(
